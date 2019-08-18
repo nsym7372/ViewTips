@@ -1,0 +1,83 @@
+﻿
+<div>
+    <button id="AjaxSample" type="submit" class="btn btn-primary">送信</button>
+    <h3 id="result"></h3>
+</div>
+
+
+
+@section scripts{
+
+    <script>
+        $(function () {
+
+            let $button = $("#AjaxSample");
+            let $result = $("#result");
+            $button.on("click", function () {
+
+                $.ajax({
+                    url: '@Url.Action("BooksIndex", "AjaxSample")',
+                    type: "Post"
+                }).done(function (data, status, xhr) {
+                    // 正常
+                    $result.text(data);
+
+                }).fail(function (xhr, status, error) {
+                    // 異常
+                    if (xhr.status == 500) {
+                        $result.text(xhr.responseText);
+                    }
+                }).always(function (data, status, xhr) {
+                    // 常に
+                });
+            });
+        });
+    </script>
+
+
+
+    @*$("AjaxSample").on("click", function () {
+
+            $.ajax({
+                url: '@Url.Action("AjaxSample", "BooksIndex")',
+                type: "POST",
+                data: param
+                    }).done(function (data, status, xhr) {
+                        // 正常
+                        for (var key in data) {
+                            alert(key + " " + data[key]);
+                        }
+                    }).fail(function (xhr, status, error) {
+                        // 異常
+                        alert(error);
+                    }).always(function (data, status, xhr) {
+                        // 常に
+                    });
+        });*@
+
+
+    @*$(function () {
+
+            var param = {
+                str1: "Hello",
+                str2: "World!!"
+            };
+
+            $.ajax({
+                url: '@Url.Action("AjaxSample", "BooksIndex")',
+                type: "POST",
+                data: param
+            }).done(function (data, status, xhr) {
+                // 正常
+                for (var key in data) {
+                    alert(key + " " + data[key]);
+                }
+            }).fail(function (xhr, status, error) {
+                // 異常
+                alert(error);
+            }).always(function (data, status, xhr) {
+                // 常に
+            });
+        });*@
+
+}
