@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxSample", "AjaxSample\AjaxSample.csproj", "{4B8F88B8-5701-4A5C-B5AC-47C2C59774E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModalDIalog", "ModalDIalog\ModalDIalog.csproj", "{41E91B7E-2452-46E2-8422-89A13CBB66AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4B8F88B8-5701-4A5C-B5AC-47C2C59774E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B8F88B8-5701-4A5C-B5AC-47C2C59774E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B8F88B8-5701-4A5C-B5AC-47C2C59774E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41E91B7E-2452-46E2-8422-89A13CBB66AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41E91B7E-2452-46E2-8422-89A13CBB66AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41E91B7E-2452-46E2-8422-89A13CBB66AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41E91B7E-2452-46E2-8422-89A13CBB66AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
