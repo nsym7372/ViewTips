@@ -115,6 +115,21 @@ namespace ModalDIalog.Controllers
             return RedirectToAction("Index");
         }
 
+        public PartialViewResult Search(string carName)
+        {
+            if (!Request.IsAjaxRequest())
+            {
+                // ここに入ってくる
+            }
+
+            var cars = db.Cars.Where(r => r.Name.Contains(carName));
+
+            return PartialView("_CarList", cars);
+
+            // https://teratail.com/questions/134096
+            // http://sh-yoshida.hatenablog.com/entry/2014/12/09/020509
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
