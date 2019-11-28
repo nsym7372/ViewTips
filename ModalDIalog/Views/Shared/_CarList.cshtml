@@ -17,15 +17,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Manufacturer)
             </td>
-            <td>
+            <td class="CarName">
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                <button type="button" class="btn btn-primary paste-name">Paste</button>
             </td>
         </tr>
     }
 
 </table>
+
+

@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Car, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Car, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Car, new { htmlAttributes = new { @class = "form-control Car" } })
                 @Html.ValidationMessageFor(model => model.Car, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -70,6 +70,28 @@
 </div>
 
 @section Scripts {
+    <script>
+
+        // ajaxでbuttonを作るため
+        $("#carsGrid").on("click", ".paste-name", function () {
+            var val = $(this).parents("tr").children(".CarName").text();
+            val = val.replace(/\r?\n/g,"");
+            $('.Car').val(val.trim());
+            console.log(val);
+        });
+
+            //$.each(record, function () {
+            //    if ($('td:nth-child(1) #personSelector:checked', this).val()) {
+            //        var personIDValue = $('td:nth-child(2)', this).text();
+            //        result = result + personIDValue + ",";
+            //    }
+            //});
+
+            //$('#conditions_PersonID').val(result);
+
+    </script>
+
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/jqueryajax")
+
 }
