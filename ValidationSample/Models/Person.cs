@@ -7,7 +7,7 @@ namespace ValidationSample.Models
     using System.Data.Entity.Spatial;
     using ValidationSample.Extentions;
 
-    public partial class Person
+    public partial class Person : IValidatableObject
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Person()
@@ -28,5 +28,13 @@ namespace ValidationSample.Models
 
         [AgeOddEven]
         public int? Age { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (string.IsNullOrEmpty(Memo) == false && Age == null)
+            {
+                yield return new ValidationResult("ÉÅÉÇèëÇ¢ÇΩÇÁîNóÓÇ‡ïKóv");
+            }
+        }
     }
 }
