@@ -31,6 +31,9 @@ namespace ValidationSample.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
+            //サービスを挿入する場合
+            //https://miso-soup3.hateblo.jp/entry/20121030/1351588416
+
             if (string.IsNullOrEmpty(Memo) == false && Age == null)
             {
                 yield return new ValidationResult("メモ書いたら年齢も必要");
