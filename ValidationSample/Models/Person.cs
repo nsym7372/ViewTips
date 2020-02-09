@@ -5,6 +5,7 @@ namespace ValidationSample.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using ValidationSample.Extentions;
 
     public partial class Person
     {
@@ -25,6 +26,7 @@ namespace ValidationSample.Models
 
         public string Memo { get; set; }
 
+        [AgeOddEven]
         public int? Age { get; set; }
     }
 }
